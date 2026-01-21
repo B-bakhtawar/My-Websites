@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="pageTop">
+<%- include("partials/header", { activePage: "Experiences", cartCount }) %>
+
+<!-- HERO SECTION -->
+<section class="pageHeadX">
+  <div class="container">
+    <h1>Experiences</h1>
+    <p class="muted">
+      Luxury ambience, unforgettable moments, and curated culinary experiences designed for every occasion.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- EXPERIENCES GRID -->
+<section class="experiencesGrid container">
+  
+  <a href="/private-dining" class="expCard">
+    <div class="expImgWrap">
+      <img src="/images/experience-private.jpg" alt="Private Dining">
+    </div>
+    <div class="expInfo">
+      <h2>Private Dining</h2>
+      <p>Reserve an exclusive area for family, corporate dinners, birthdays, and celebrations with personalized service.</p>
+    </div>
+  </a>
+
+  <a href="/chefs-table" class="expCard">
+    <div class="expImgWrap">
+      <img src="/images/experience-chef.jpg" alt="Chef's Table">
+    </div>
+    <div class="expInfo">
+      <h2>Chef’s Table</h2>
+      <p>A curated tasting journey with seasonal ingredients and delicacies crafted by our head chef.</p>
+    </div>
+  </a>
+
+  <a href="/live-evenings" class="expCard">
+    <div class="expImgWrap">
+      <img src="/images/experience-live.jpg" alt="Live Evenings">
+    </div>
+    <div class="expInfo">
+      <h2>Live Evenings</h2>
+      <p>Enjoy soft live music on select evenings for a relaxed and elegant dining atmosphere.</p>
+    </div>
+  </a>
+
+</section>
+
+<%- include("partials/footer") %>
+</body>
+</html>

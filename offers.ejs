@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="pageTop">
+<%- include("partials/header", { activePage:"offers", cart }) %>
+
+<section class="pageHeadX">
+  <div class="container">
+    <h1>Special Offers</h1>
+    <p class="muted"><b>Limited deals and seasonal highlights.</b></p>
+  </div>
+</section>
+
+<section class="sectionX">
+  <div class="container offersGrid" style="margin-top:0;">
+    <a class="offerBig" href="/menu"><img src="/images/offer-1.jpg" alt=""><div class="offerLabel"><b>Seasonal Set</b></div></a>
+    <a class="offerSmall" href="/menu"><img src="/images/offer-2.jpg" alt=""><div class="offerLabel center"><b>Everyday Deals</b></div></a>
+    <a class="offerSmall" href="/menu"><img src="/images/offer-3.jpg" alt=""><div class="offerLabel center"><b>Todays Special</b></div></a>
+    <a class="offerWide" href="/menu"><img src="/images/offer-4.jpg" alt=""><div class="offerLabel"><b>Breakfast Special</b></div></a>
+  </div>
+</section>
+
+<%- include("partials/footer") %>
+</body>
+</html>

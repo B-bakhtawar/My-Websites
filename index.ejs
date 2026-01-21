@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<%- include("partials/header", { activePage: "home", cart }) %>
+
+<!-- HERO (full width) -->
+<section class="heroX">
+  <img class="heroX-bg" src="/images/hero.jpg" alt="hero">
+  <div class="heroX-overlay"></div>
+
+  <div class="container heroX-content">
+    <h1>Luxury Dining, Naturally.</h1>
+    <p>Fresh ingredients • premium ambience • order online or reserve a table</p>
+
+    <div class="heroX-actions">
+      <a class="btn" href="/menu">Explore Menu</a>
+      <a class="btn ghost" href="/reservation">Reserve Table</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT (beige block with big heading + text like screenshot) -->
+<section class="aboutX" id="experience">
+  <div class="container aboutX-grid">
+    <div class="aboutX-left">
+      <p class="eyebrow">WELCOME TO</p>
+      <h2>THE DINING RITUAL<br/>A Touch of Natural</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="aboutX-right">
+      <p class="muted">
+         <h1 class="hero-title">The Dining Ritual</h1>
+An experience where fresh, wholesome cuisine meets refined luxury and timeless elegance.
+
+Savour thoughtfully crafted dishes made with premium ingredients and signature flavours, served in a calm and peaceful ambience designed to bring people together.
+
+Whether it’s an intimate family dinner, a joyful celebration, or a special private event, every moment at The Dining Ritual is curated to feel warm, memorable, and indulgent.
+
+Relax during our coffee hours, enjoy soothing evenings, and elevate your nights with optional live music that complements the mood without overpowering it.
+      </p>
+      <p class="muted">
+        Open daily • Coffee hour • Live music nights (optional)
+      </p>
+      <p class="muted"><b>Open daily:</b> 12:00 pm – 12:00 am</p>
+    </div>
+  </div>
+
+  <!-- 3 tall photos strip -->
+  <div class="container trioX">
+    <img src="/images/home-1.jpg" alt="">
+    <img src="/images/home-2.jpg" alt="">
+    <img src="/images/home-3.jpg" alt="">
+  </div>
+</section>
+
+<section class="menuPromoX">
+  <div class="container promoX-grid">
+    <div class="promoX-img">
+      <img src="/images/menu-promo.jpg" alt="menu promo">
+    </div>
+
+    <div class="promoX-card">
+      <p class="eyebrow">Our</p>
+      <h2>Menu</h2>
+      <div class="divider"></div>
+      <p class="muted">
+        Crafted with the finest ingredients and uncompromising attention to detail, every dish reflects our commitment to quality. Discover our starters, mains, desserts, and signature drinks — all available to order online.
+      </p>
+      <a class="btn dark" href="/menu">Discover</a>
+    </div>
+  </div>
+</section>
+
+<section class="offersX" id="offers">
+  <div class="container">
+    <h2 class="offerTitle">Special Offers</h2>
+    <div class="divider"></div>
+
+    <div class="offersGrid">
+      <a class="offerBig" href="/menu">
+        <img src="/images/offer-1.jpg" alt="">
+        <div class="offerLabel">
+          <span class="mini">Signature</span>
+          <b>Seasonal Set</b>
+        </div>
+      </a>
+
+      <a class="offerSmall" href="/menu">
+        <img src="/images/offer-2.jpg" alt="">
+        <div class="offerLabel center"><b>Everyday deals</b></div>
+      </a>
+
+      <a class="offerSmall" href="/menu">
+        <img src="/images/offer-3.jpg" alt="">
+        <div class="offerLabel center"><b>Todays Special</b></div>
+      </a>
+
+      <a class="offerWide" href="/menu">
+        <img src="/images/offer-4.jpg" alt="">
+        <div class="offerLabel"><b>Breakfast Special</b></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footerX" id="contact">
+  <div class="container footerX-grid">
+    <div>
+      <h3>Contact</h3>
+      <p class="muted">📞 +923493745017</p>
+      <p class="muted">✉️ thediningritual@domain.com</p>
+    </div>
+
+    <div class="center">
+      <img class="footerLogo" src="/images/logo.png" alt="">
+      <p class="muted">Opening Hours</p>
+      <p><b>12 PM – 12 AM</b></p>
+    </div>
+
+    <div class="right">
+      <h3>Address</h3>
+      <p class="muted">Islamabad, Pakistan</p>
+    </div>
+  </div>
+
+  <div class="container footerX-bottom">
+    <p class="muted">© <%= new Date().getFullYear() %> The Dining Ritual. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp floating button (optional) -->
+<a class="waFloat" href="https://wa.me/923001234567" target="_blank" rel="noreferrer">💬</a>
+
+</body>
+</html>

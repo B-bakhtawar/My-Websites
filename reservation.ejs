@@ -1,0 +1,61 @@
+<%- include("layout", {
+  title: "Reservation",
+  body: `
+  <section class="pageHeadX">
+    <div class="container">
+      <h1>Reservation</h1>
+      <p class="muted">Book your table in seconds.</p>
+
+      ${
+        (typeof ok !== "undefined" && ok)
+          ? `<div class="alert success">✅ Reservation submitted! We’ll contact you soon.</div>`
+          : ``
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <form class="form" method="POST" action="/reservation">
+          <div class="grid-2">
+            <div class="field">
+              <label>Full Name</label>
+              <input type="text" name="fullName" required />
+            </div>
+
+            <div class="field">
+              <label>Phone</label>
+              <input type="text" name="phone" required />
+            </div>
+
+            <div class="field">
+              <label>Guests</label>
+              <input type="number" name="guests" min="1" max="20" value="2" required />
+            </div>
+
+            <div class="field">
+              <label>Date</label>
+              <input type="date" name="date" required />
+            </div>
+
+            <div class="field">
+              <label>Time</label>
+              <input type="time" name="time" required />
+            </div>
+
+            <div class="field">
+              <label>Notes (optional)</label>
+              <input type="text" name="notes" placeholder="Any special request" />
+            </div>
+          </div>
+
+          <button class="btn dark" type="submit" style="margin-top:16px;">
+            Confirm Reservation
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  `
+}) %>

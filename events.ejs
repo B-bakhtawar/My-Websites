@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="pageTop">
+
+<%- include("partials/header", { activePage:"events", cartCount: cartCount || 0 }) %>
+
+<!-- HERO -->
+<section class="pageHeadX">
+  <div class="container">
+    <h1>Events</h1>
+    <p class="muted">Upcoming events and special nights.</p>
+  </div>
+</section>
+
+
+
+<!-- EVENTS LIST -->
+<section class="sectionX">
+  <div class="container eventsGrid">
+
+    <article class="eventCard">
+      <div class="eventImg">
+        <img src="/images/event-live-night.jpg" alt="Friday Live Night">
+      </div>
+      <div class="eventBody">
+        <div class="eventMeta">
+          <span class="pill">Every Friday</span>
+          <span class="dot">•</span>
+          <span class="metaText">7:00 PM onwards</span>
+        </div>
+        <h2>Friday Live Night</h2>
+        <p class="muted">
+          Soft live music, warm lighting, and a special menu designed for an elevated evening experience.
+        </p>
+        <div class="eventActions">
+          <a class="btnPrimary" href="/reservation">Reserve Table</a>
+          <a class="btnGhost" href="/menu">View Menu</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="eventCard">
+      <div class="eventImg">
+        <img src="/images/event-family-sunday.jpg" alt="Family Sunday">
+      </div>
+      <div class="eventBody">
+        <div class="eventMeta">
+          <span class="pill">Sundays</span>
+          <span class="dot">•</span>
+          <span class="metaText">12:00 PM – 6:00 PM</span>
+        </div>
+        <h2>Family Sunday</h2>
+        <p class="muted">
+          A peaceful, family-friendly afternoon with kid-approved favourites and value combo offers.
+        </p>
+        <div class="eventActions">
+          <a class="btnPrimary" href="/reservation">Book Family Table</a>
+          <a class="btnGhost" href="/contact">Ask Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="eventCard">
+      <div class="eventImg">
+        <img src="/images/event-seasonal-festival.jpg" alt="Seasonal Festival">
+      </div>
+      <div class="eventBody">
+        <div class="eventMeta">
+          <span class="pill">Seasonal</span>
+          <span class="dot">•</span>
+          <span class="metaText">Limited-time</span>
+        </div>
+        <h2>Seasonal Festival</h2>
+        <p class="muted">
+          Limited seasonal dishes, chef’s picks, and signature flavours — crafted for celebration nights.
+        </p>
+        <div class="eventActions">
+          <a class="btnPrimary" href="/reservation">Reserve</a>
+          <a class="btnGhost" href="/menu">Explore Specials</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<%- include("partials/footer") %>
+</body>
+</html>
+
+<%- include("partials/footer") %>
+</body>
+</html>

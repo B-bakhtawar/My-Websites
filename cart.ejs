@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script defer src="/js/cart.js"></script>
+</head>
+<body>
+<body class="pageTop">
+<%- include("partials/header", { activePage: "cart", cart }) %>
+
+<section class="pageHeadX">
+  <div class="container">
+    <h1>Your Cart</h1>
+    <p class="muted">Increase/decrease quantity instantly — no page refresh.</p>
+  </div>
+</section>
+
+
+<section class="section container">
+  <% if (!cart || cart.totalQty === 0) { %>
+
+    <div class="card">
+      <h3>Your cart is empty</h3>
+      <p class="muted">Go to menu and add items.</p>
+      <a class="btn" href="/menu">Go to Menu</a>
+    </div>
+
+  <% } else { %>
+
+    <div class="cart-grid">
+      <!-- LEFT: CART ITEMS -->
+      <div class="cart-items">
+
+        <%
+          const itemsArray =
+            cart && cart.items
+              ? (Array.isArray(cart.items) ? cart.items : Object.values(cart.items))
+              : [];
+        %>
+
+        <% itemsArray.forEach(i => { %>
+          <div class="card cart-row" data-row="<%= i.id %>">
+            <div class="cart-left">
+              <div class="thumb">
+                <img src="<%= i.img %>" alt="<%= i.name %>">
+              </div>
+              <div>
+                <h3 class="cart-title"><%= i.name %></h3>
+                <p class="muted">Rs <%= i.price %> each</p>
+              </div>
+            </div>
+
+            <div class="cart-right">
+              <button class="qtybtn" data-action="dec" data-id="<%= i.id %>" aria-label="Decrease">−</button>
+              <span class="qtynum" data-qty><%= i.qty %></span>
+              <button class="qtybtn" data-action="inc" data-id="<%= i.id %>" aria-label="Increase">+</button>
+
+              <form method="post" action="/cart/remove/<%= i.id %>" class="remove-form">
+                <button class="btn small danger" type="submit">Remove</button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+
+      <!-- RIGHT: SUMMARY -->
+      <div class="card cart-summary">
+        <h3>Order Summary</h3>
+
+        <div class="line-item">
+          <span class="muted">Items</span>
+          <b data-cartqty><%= cart.totalQty %></b>
+        </div>
+
+        <div class="line-item">
+          <span class="muted">Total</span>
+          <b data-carttotal>Rs <%= cart.totalPrice %></b>
+        </div>
+
+        <hr class="hr">
+
+        <a class="btn" href="/checkout">Proceed to Checkout</a>
+        <a class="btn ghost" href="/menu" style="margin-top:10px;">Add more items</a>
+
+        <p class="muted" style="margin-top:12px;font-size:13px;">
+          Tip: Use + / − to update quantity instantly.
+        </p>
+      </div>
+    </div>
+
+  <% } %>
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

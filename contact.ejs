@@ -1,0 +1,64 @@
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="pageTop">
+<%- include("partials/header", { activePage: "contact", cartCount }) %>
+
+ <section class="pageHeadX">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p class="muted">We’re here to help — reach out anytime.</p>
+  </div>
+</section>
+
+
+
+  <section class="section">
+    <div class="container grid-2">
+      
+      <div class="card">
+        <h2>Send a message</h2>
+
+        <form class="form" method="POST" action="/contact">
+          <div class="field">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required />
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="field">
+            <label>Phone (optional)</label>
+            <input type="text" name="phone" placeholder="+92..." />
+          </div>
+
+          <div class="field">
+            <label>Message</label>
+            <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Our details</h2>
+
+        <div class="info">
+          <p><strong>Address:</strong> Islamabad, Pakistan</p>
+          <p><strong>Phone:</strong> +92 349 3745017</p>
+          <p><strong>Email:</strong> support@Thediningritual.com</p>
+          <p><strong>Hours:</strong> 12:00 PM – 12:00 AM</p>
+        </div>
+
+    </div>
+  </section>
+  `
+}) %>
+

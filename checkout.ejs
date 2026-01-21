@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+
+<body class="pageTop">
+<%- include("partials/header", { activePage: "checkout", cartCount }) %>
+
+
+<section class="pageHeadX">
+  <div class="container">
+    <h1>Checkout</h1>
+    <p class="muted">Enter delivery info and confirm your order.</p>
+  </div>
+</section>
+
+
+<% if (!ok) { %>
+<section class="section container">
+  <div class="cart-grid">
+    <div class="card">
+      <h3>Delivery Details</h3>
+      <form class="form" method="post" action="/checkout">
+        <label>Full Name<input name="fullName" required></label>
+        <label>Phone<input name="phone" required></label>
+        <label>Address<textarea name="address" rows="4" required></textarea></label>
+        <button class="btn" type="submit">Confirm Order (Rs <%= cart.totalPrice %>)</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Your Items</h3>
+      <% cartItems.forEach(i => { %>
+        <div class="line-item">
+          <span><%= i.name %> × <b><%= i.qty %></b></span>
+          <span>Rs <%= i.qty * i.price %></span>
+        </div>
+      <% }) %>
+      <hr class="hr">
+      <div class="line-item">
+        <b>Total</b>
+        <b>Rs <%= cart.totalPrice %></b>
+      </div>
+    </div>
+  </div>
+</section>
+<% } %>
+
+</body>
+</html>

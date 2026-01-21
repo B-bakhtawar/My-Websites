@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="pageTop">
+
+<%- include("partials/header", { activePage:"menu", cart, logo:"/images/logo.png" }) %>
+
+<section class="section beige">
+  <div class="container">
+    <h1 style="margin:0;font-size:44px;">Menu</h1>
+    <p class="muted">Simple menu list • Add to Cart.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card">
+      <div class="menuList">
+        <% items.forEach(i => { %>
+          <div class="menuRow">
+            <div class="rowLeft">
+              <div class="thumb"><img src="<%= i.img %>" alt=""></div>
+              <div class="rowText">
+                <div class="badge"><%= i.category %></div>
+                <h3><%= i.name %></h3>
+                <p><%= i.desc %></p>
+              </div>
+            </div>
+<div class="rowRight">
+  <div class="price">Rs <%= i.price %></div>
+
+  <form method="post" action="/cart/add/<%= i.id %>">
+    <button class="btn small" type="submit">Add</button>
+  </form>
+</div>
+
+          </div>
+          <div class="hr"></div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") %>
+</body>
+</html>
+
+

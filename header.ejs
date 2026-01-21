@@ -1,0 +1,23 @@
+<header class="nav <%= activePage==='home' ? 'nav-abs nav-transparent' : 'nav-solid' %>">
+  <div class="container nav-row">
+    <a class="brand" href="/">
+      <img class="logo" src="/images/logo.png" alt="logo" onerror="this.style.display='none'">
+      <span>THE DINING RITUAL</span>
+    </a>
+
+    <nav class="links">
+      <a class="<%= activePage==='home'?'active':'' %>" href="/">Home</a>
+      <a class="<%= activePage==='menu'?'active':'' %>" href="/menu">Menu</a>
+      <a class="<%= activePage==='offers'?'active':'' %>" href="/offers">Special Offers</a>
+      <a class="<%= activePage==='experience'?'active':'' %>" href="/experience">Experiences</a>
+      <a class="<%= activePage==='events'?'active':'' %>" href="/events">Events</a>
+      <a class="<%= activePage==='contact'?'active':'' %>" href="/contact">Contact</a>
+      <a class="<%= activePage==='contact'?'active':'' %>" href="/checkout">Checkout</a>
+      <a class="cartlink <%= activePage==='cart'?'active':'' %>" href="/cart">
+        Cart <span class="cartbadge"><%= cart?.totalQty || 0 %></span>
+      </a>
+
+      <a class="btn reserve" href="/reservation">Reserve Table</a>
+    </nav>
+  </div>
+</header>
